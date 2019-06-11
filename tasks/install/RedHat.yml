@@ -7,6 +7,7 @@
     gpgkey: https://packagecloud.io/prometheus-rpm/release/gpgkey
     gpgcheck: 0
   when: prometheus_upstream_package_repository
+  tags: install
 
 - name: Install
   yum:
@@ -18,4 +19,5 @@
   ignore_errors: "{{ ansible_check_mode }}"
   retries: 5
   delay: 2
+  tags: install
 ...
